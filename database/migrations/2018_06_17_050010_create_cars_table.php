@@ -16,6 +16,18 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->text('carRegNo');//เลขทะเบียน
+            $table->text('carRegProvince');//จังหวัด
+            $table->text('car_CMFG');//ยี่ห้อ
+            $table->text('carModel');//รุ่น uppp
+            $table->text('carModel_Year');//รุ่นปี
+            $table->text('carModelType');//ประเภทรถ กระบะ
+            $table->text('chassino');//เลขตัวถัง
+            $table->text('modelNo');//โมเดล
+            $table->text('engineNo');//หมายเลขเครื่อง
+            $table->text('carDescId');//สภาพรถ
+            $table->text('color_ID');//สีรถ
+            $table->text('useColorType_Id');//สีที่พ่นรถ
         });
     }
 

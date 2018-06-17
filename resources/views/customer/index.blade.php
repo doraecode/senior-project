@@ -3,13 +3,15 @@
 
 @endsection
 @section('content')
-
-
-
-<br>
-    <a href="/customer/create"><button type="button">เพิ่มข้อมูลลูกค้า</button></a>
-
-    <br><br><br>
+<table>
+<tr>
+    <div align="Center">
+    <a href="customers/create" class="btn btn-primary" role="button">สร้างข้อมูลลูกค้า </a>
+    <a href="#" class="btn btn-primary" role="button">Update สถานะรถลูกค้า</a>
+</div>
+</tr>
+</table>
+    
 
     <table align="center" class="table table-striped">
     <thead>
@@ -27,14 +29,14 @@
     <tbody>
         <?php foreach ($customers as $customer ): ?>
         <tr>
-            <td><a href="/customer/{{$customer->id}}">{{$customer->id}}</a> </td>
+            <td><a href="/customers/{{$customer->id}}">{{$customer->id}}</a> </td>
             <td>{{$customer->firstName}}</td>
             <td>{{$customer->lastName}}</td>
             <td>{{$customer->idCard}}</td>
             <td>{{$customer->tel}}</td>
             <td>{{$customer->idLine}}</td>
             <td>{{$customer->address}}</td>
-            <td><a href="claim/create"><button type="button">สร้างเคลม</button></a></td>
+            <td><a href="claims/create"><button type="button">สร้างเคลม</button></a></td>
         </tr>
         <?php endforeach; ?>    
     </tbody>

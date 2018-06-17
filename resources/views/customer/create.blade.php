@@ -3,7 +3,7 @@
 
 @endsection
 @section('content')
-{{-- <form class="form-signin" method="POST" action="/customer/post">
+<form class="form-signin" method="POST" action="/customers/post">
       {{ csrf_field() }}
       
       <h1 class="h3 mb-3 font-weight-normal">Hello World</h1>
@@ -34,5 +34,5 @@
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
       
-    </form> --}}
+    </form>
   

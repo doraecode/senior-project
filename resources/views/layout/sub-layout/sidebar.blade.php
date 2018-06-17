@@ -4,10 +4,10 @@
 
 <table class="nav nav-pills nav-stacked " style="margin-left: 30px">
   
-	<tr><td><a href="http://localhost:8000/"><h4>เคลม</h4></a></td>
+	<tr><td><a href="http://localhost:8000/claims"><h4>เคลม</h4></a></td>
 		<td align="left"><span class="badge "style="margin-left: 20px">5</span></td>
 	</tr>
-	<tr><td><a href="http://localhost:8000/customer"><h4>ข้อมูลลูกค้า</h4></a></td>	
+	<tr><td><a href="http://localhost:8000/customers"><h4>ข้อมูลลูกค้า</h4></a></td>	
 		<td><span class="badge "style="margin-left: 20px">5</span></td>
 	</tr>
 	<tr><td><a href="#"><h4>ควย</h4></a></td>	

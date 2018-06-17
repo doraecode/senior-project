@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Customer;
 class CustomerController extends Controller
 {
-    
+    public function createCustomer()
+    {
+        //
+        return view('customer.create');
+    }
     public function index()
     {
         //
@@ -14,11 +18,6 @@ class CustomerController extends Controller
         return view('customer.index', compact('customers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
@@ -43,23 +42,15 @@ class CustomerController extends Controller
 
         return redirect('/customer');
 
-        //
     }
 
     public function show(Customer $customer)
     {
         //
         //
-        //$user = Customer::find($id);
+        //$user = customer::find($id);
         return view('customer.show', compact('customer'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
