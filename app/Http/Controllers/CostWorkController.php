@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Image;
+use App\CostWork;
 use App\Customer;
 
-class ImageController extends Controller
+class CostWorkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,22 +16,16 @@ class ImageController extends Controller
     public function index($id)
     {
         //
-        // $user = customer::find($id);
         $customer = Customer::find($id);
-
-        $images = Image::get();
-        return view('claim.component.image',compact('images','customer'));
+        $costWorks = CostWork::all();
+        return view('claim.component.costWork', compact('costWorks','customer'));
     }
-    
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         //
+        return view('claim.component.costWork');
     }
 
     /**
@@ -42,18 +36,10 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->exists('btn-upload')){
-            $file = $request->file('uploader');
-            $path = 'images/uploads';
-            $filename = $file->getClientOriginalName();
-            $file->move('images/uploads',$file->getClientOriginalName());
-            $image = new Images;
-            $image->image_name = $filename;
-            $image->save();
-            echo 'Uploaded';
- 
-        }
-        return redirect()->back();
+        CostWork::create(['number'=> request('Number'),'name'=> request('Name'),'damageLevel'=> request('DamageLevel'),'price'=> request('Price'),'priceOffer'=> request('PriceOffer'),'priceOk'=> request('PriceOk')]);
+        
+
+        return redirect('/');
     }
 
     /**
@@ -62,10 +48,9 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
         //
-        return view('image.show');
     }
 
     /**

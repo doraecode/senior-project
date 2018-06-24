@@ -3,6 +3,16 @@
 <link href="{{asset('assets/css/upload.css')}}" rel="stylesheet" type="text/css"/>
 @endsection
 @section('content')
+<nav class="nav nav-pills nav-fill">
+  <a class="nav-item nav-link " href="#">ข้อมูลทั่วไป</a>
+  <a class="nav-item nav-link" href="/register/claims/{{$customer->id}}/cost-work">ค่าแรง</a>
+  <a class="nav-item nav-link" href="#">ค่าอะไหล่</a>
+  <a class="nav-item nav-link" href="#">ค่าใช้จ่ายอื่นๆ</a>
+  <a class="nav-item nav-link active" href="http://localhost:8000/register/claims/{{$customer->id}}/image">รูปประกอบ</a>
+  <a class="nav-item nav-link" href="#">สรุป</a>
+  <a class="nav-item nav-link disabled" href="#">Disabled</a>
+</nav>
+<br><br>
 
   
 

@@ -6,11 +6,7 @@ use Illuminate\Http\Request;
 use App\Customer;
 class CustomerController extends Controller
 {
-    public function createCustomer()
-    {
-        //
-        return view('customer.create');
-    }
+   
     public function index()
     {
         //
@@ -25,7 +21,7 @@ class CustomerController extends Controller
     }
 
     
-    public function store(Request $request)
+    public function store()
     {
         //store
         Customer::create(['firstName'=> request('Firstname'),'lastName'=> request('Lastname'),'idCard'=> request('Idcard'),'tel'=> request('Tel'),'idLine'=> request('Idline'),'address'=> request('Address')]);
@@ -40,7 +36,7 @@ class CustomerController extends Controller
 
         // $post->save();
 
-        return redirect('/customer');
+        return redirect('/customers');
 
     }
 
@@ -48,7 +44,7 @@ class CustomerController extends Controller
     {
         //
         //
-        //$user = customer::find($id);
+        // $user = customer::find($id);
         return view('customer.show', compact('customer'));
     }
     public function edit($id)

@@ -28,6 +28,24 @@ class CreateOffersTable extends Migration
             $table->text('driver_Phone_NO');//เบอร์อผู้ขับขี่
             $table->text('kmCarOffer');//หมายเลขกม
             $table->text('commentOfferCar');//ความเรียบร้อยตอนรับรถ
+            $table->integer('customer_id')->unsigned();
+            $table->integer('claim_id')->unsigned();
+            $table->integer('car_id')->unsigned();
+            $table->integer('contact_id')->unsigned();
+
+          
+            $table->foreign('customer_id')
+                  ->references('id')
+                  ->on('customers');
+            $table->foreign('claim_id')
+                  ->references('id')
+                  ->on('claims');  
+             $table->foreign('car_id')
+                  ->references('id')
+                  ->on('cars');  
+            $table->foreign('contact_id')
+                  ->references('id')
+                  ->on('contacts');    
         });
     }
 

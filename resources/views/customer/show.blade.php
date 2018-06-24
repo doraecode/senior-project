@@ -1,9 +1,18 @@
 @extends('layout.main') @section('page_title', 'Customers')
 @section('stylesheet')
+ <link href="/css/app.css" rel="stylesheet">
 
 @endsection
 @section('content')
 <div class="table-responsive">
+    <table>
+<tr>
+    <div align="Center">
+    <a href="/register/customer" class="btn btn-primary" role="button">สร้างข้อมูลลูกค้า </a>
+    <a href="#" class="btn btn-primary" role="button">Update สถานะรถลูกค้า</a>
+</div>
+</tr>
+</table>
     <table>
 		<tr>
 			<th>ชื่อ</th>

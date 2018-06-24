@@ -13,7 +13,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 @yield('stylesheet')
 
- {{-- <link href="/css/app.css" rel="stylesheet"> --}}
+ <!-- <link href="/css/app.css" rel="stylesheet"> -->
  
  </head>
  <body>
@@ -30,7 +30,7 @@
 <div class="row content">
  <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 sidenav">
 
-	@include('layout.sub-layout.sidebar')
+	@include('layout.sub-layout.sidebar_claim')
 
      
 

@@ -20,6 +20,8 @@ class CreateClaimsTable extends Migration
             $table->text('insureName');//name insurer$table->text('accPolicyNo');//เลขกรมธรรม์
             $table->text('claimNo');//เลขที่เคลม
             $table->text('accClaimNo');//เลขรับแจ้ง
+            $table->text('accPolicyNo');//เลขกรมธรรม์  uppppppp
+            
             $table->text('accStatusCar'); //สถานะจอดซ่อม$table->text('CarIden');//รถประกันหรือคู่กรณี
             $table->text('carIdenNo');//คันที่
             $table->text('deduction');//ค่าเสียหายส่วนแรก
@@ -32,6 +34,15 @@ class CreateClaimsTable extends Migration
             $table->text('callAccidentDate');//วันที่แจ้งอุบัติเหตุ
             $table->text('accidentDate');//วันที่เกิดอุบัติเหตุ
         });
+            $table->integer('customer_id')->unsigned();
+          
+
+          $table->foreign('customer_id')
+                  ->references('id')
+                  ->on('customers');
+               
+
+            
     }
 
     /**

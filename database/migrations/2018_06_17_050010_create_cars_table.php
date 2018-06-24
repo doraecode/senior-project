@@ -28,6 +28,17 @@ class CreateCarsTable extends Migration
             $table->text('carDescId');//สภาพรถ
             $table->text('color_ID');//สีรถ
             $table->text('useColorType_Id');//สีที่พ่นรถ
+
+          $table->integer('customer_id')->unsigned();
+          $table->integer('claim_id')->unsigned();
+
+          $table->foreign('customer_id')
+                  ->references('id')
+                  ->on('customers');
+           $table->foreign('claim_id')
+                  ->references('id')
+                  ->on('claims');       
+
         });
     }
 

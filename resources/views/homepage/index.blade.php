@@ -1,21 +1,10 @@
-@extends('layout.main') @section('page_title', 'Claims')
+@extends('layout.main') @section('page_title', 'Customers')
 @section('stylesheet')
 
- <link href="/css/app.css" rel="stylesheet">
 @endsection
 @section('content')
-<table>
-<tr>
-	<div align="Center">
-    <a href="/register/claims" class="btn btn-primary" role="button">สร้างข้อมูลลูกค้า </a>
-    <a href="#" class="btn btn-primary" role="button">Update สถานะรถลูกค้า</a>
-</div>
-</tr>
-</table>
-
-
-
-<table class="table table-striped" style="width: 1000px; vertical-align: top; ">
+<input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br><table class="table table-striped" style="width: 1000px; vertical-align: top; ">
 
 	
 
@@ -35,15 +24,15 @@
 	<th>ชื่อลูกค้า</th>
     </tr></thead>
 
-    <tbody>
+    <tbody id="myTable">
     <?php foreach ($claims as $claim ): ?>
         <tr>
       <td>{{$claim->created_at}}</td>
         <td>{{$claim->id}}</td>
         <td><a href="/index/{{$createclaim->id}}">{{$claim->claim_id}}</a></td>
-        <td>{{$claim->accident_id}}</td>
-        <td>{{$claim->car_id}}</td>
-        <td>{{$claim->car_brand}}</td>
+        <td>{{$claim->accClaimNo}}</td>
+        <td>{{$claim->claimNo}}</td>
+        <td>{{$claim->statusCar}}</td>
         <td>{{$claim->car_gen}}</td>
         <td>{{$claim->company}}</td>
         <td>{{$claim->state}}</td>
@@ -55,5 +44,17 @@
 
 
 
-</table>
+  </table>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
 @endsection

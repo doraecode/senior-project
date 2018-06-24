@@ -1,18 +1,23 @@
 @extends('layout.main') @section('page_title', 'Customers')
 @section('stylesheet')
+ <link href="/css/app.css" rel="stylesheet">
 
 @endsection
+@section('headder')
+@endsection
 @section('content')
+
 <table>
 <tr>
     <div align="Center">
-    <a href="customers/create" class="btn btn-primary" role="button">สร้างข้อมูลลูกค้า </a>
+    <a href="/register/customer" class="btn btn-primary" role="button">สร้างข้อมูลลูกค้า </a>
     <a href="#" class="btn btn-primary" role="button">Update สถานะรถลูกค้า</a>
 </div>
 </tr>
 </table>
-    
-
+ <br>   
+<input class="form-control" id="myInput" type="text" placeholder="ค้นหาข้อมูลลูกค้า...">
+  <br>
     <table align="center" class="table table-striped">
     <thead>
         <tr>
@@ -26,7 +31,7 @@
             <th>สร้างใบเคลม</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="myTable">
         <?php foreach ($customers as $customer ): ?>
         <tr>
             <td><a href="/customers/{{$customer->id}}">{{$customer->id}}</a> </td>
@@ -36,11 +41,21 @@
             <td>{{$customer->tel}}</td>
             <td>{{$customer->idLine}}</td>
             <td>{{$customer->address}}</td>
-            <td><a href="claims/create"><button type="button">สร้างเคลม</button></a></td>
+            <td><a href="/register/claims/{{$customer->id}}"><button type="button">สร้างเคลม</button></a></td>
         </tr>
         <?php endforeach; ?>    
     </tbody>
     </table>
+    <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 
 
 @endsection

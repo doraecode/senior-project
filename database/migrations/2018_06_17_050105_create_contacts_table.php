@@ -32,7 +32,21 @@ class CreateContactsTable extends Migration
             $table->text('estimatePart');//รายการอะไหล่
             $table->text('appointmentsGetCar');//วันที่นัดรับรถ
             $table->text('completeCarDate');//วันที่ซ่อมรถเสร็จ
-         
+          $table->integer('customer_id')->unsigned();
+          $table->integer('claim_id')->unsigned();
+            $table->integer('car_id')->unsigned();
+          
+          $table->foreign('customer_id')
+                  ->references('id')
+                  ->on('customers');
+           $table->foreign('claim_id')
+                  ->references('id')
+                  ->on('claims');  
+            $table->foreign('car_id')
+                  ->references('id')
+                  ->on('cars');            
+
+            
 
         });
     }

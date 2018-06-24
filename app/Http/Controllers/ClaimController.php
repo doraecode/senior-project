@@ -4,16 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Claim;
+use App\Customer;
+
 class ClaimController extends Controller
 {
    
-    
+    public function index()
+    {
+        //
+        $claims = Claim::all();
+        return view('claim.index', compact('claims'));
+    }
 
     
-    public function create()
+    public function create($id)
     {
-        ;
-        return view('claim.create');
+        $customer = Customer::find($id);
+       
+        return view('claim.component.information',compact('customer'));
     }
     public function store(Request $request)
     {
