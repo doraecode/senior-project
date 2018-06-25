@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Image;
+use App\CostWork;
 use App\Customer;
+use App\Claim;
+use App\CostEtc;
 
 class ImageController extends Controller
 {

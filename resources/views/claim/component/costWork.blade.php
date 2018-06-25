@@ -6,7 +6,9 @@
 <h4 align="center">kuy555</h4>
 
 @endsection
-
+@section('sidebar')
+@include('layout.sub-layout.sidebar_claim')
+@endsection
 @section('content')
 <nav class="nav nav-pills nav-fill">
   <a class="nav-item nav-link " href="http://localhost:8000/register/claims/{{$customer->id}}">ข้อมูลทั่วไป</a>

@@ -2,6 +2,8 @@
 @section('stylesheet')
  <link href="/css/app.css" rel="stylesheet">
 
+ 
+
 @endsection
 @section('headder')
 @endsection
@@ -9,17 +11,29 @@
 
 <table>
 <tr>
+    
+  
+  
+
     <div align="Center">
+         
     <a href="/register/customer" class="btn btn-primary" role="button">สร้างข้อมูลลูกค้า </a>
     <a href="#" class="btn btn-primary" role="button">Update สถานะรถลูกค้า</a>
 </div>
 </tr>
 </table>
  <br>   
+ {{-- <div class="collapse" id="create_customer">
+ <iframe height="545px" width="100%" src="http://localhost:8000/register/customer" name="iframe_customer" ></iframe> --}}
+
+{{-- <p><a href="https://www.w3schools.com" target="iframe_customer">W3Schools.com</a></p> --}}
+{{-- </div> --}}
+
 <input class="form-control" id="myInput" type="text" placeholder="ค้นหาข้อมูลลูกค้า...">
   <br>
+
     <table align="center" class="table table-striped">
-    <thead>
+    <thead style="">
         <tr>
             <th>#</th>
             <th>ชื่อ</th>

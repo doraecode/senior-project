@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CostWork;
 use App\Customer;
+use App\Claim;
+use App\CostEtc;
+
+
 
 class CostWorkController extends Controller
 {
@@ -36,7 +40,7 @@ class CostWorkController extends Controller
      */
     public function store(Request $request)
     {
-        CostWork::create(['number'=> request('Number'),'name'=> request('Name'),'damageLevel'=> request('DamageLevel'),'price'=> request('Price'),'priceOffer'=> request('PriceOffer'),'priceOk'=> request('PriceOk')]);
+        CostWork::create(['number'=> request('Number'),'name'=> request('Name'),'damageLevel'=> request('DamageLevel'),'price'=> request('Price'),'priceOffer'=> request('PriceOffer'),'priceOk'=> request('PriceOk'),'claim_id'=> request('Claim_id')]);
         
 
         return redirect('/');

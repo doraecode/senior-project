@@ -16,21 +16,21 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->text('carRegNo');//เลขทะเบียน
-            $table->text('carRegProvince');//จังหวัด
-            $table->text('car_CMFG');//ยี่ห้อ
-            $table->text('carModel');//รุ่น uppp
-            $table->text('carModel_Year');//รุ่นปี
-            $table->text('carModelType');//ประเภทรถ กระบะ
-            $table->text('chassino');//เลขตัวถัง
-            $table->text('modelNo');//โมเดล
-            $table->text('engineNo');//หมายเลขเครื่อง
-            $table->text('carDescId');//สภาพรถ
-            $table->text('color_ID');//สีรถ
-            $table->text('useColorType_Id');//สีที่พ่นรถ
+            $table->text('carRegNo')->nullable();;//เลขทะเบียน
+            $table->text('carRegProvince')->nullable();;//จังหวัด
+            $table->text('car_CMFG')->nullable();;//ยี่ห้อ
+            $table->text('carModel')->nullable();;//รุ่น uppp
+            $table->text('carModel_Year')->nullable();;//รุ่นปี
+            $table->text('carModelType')->nullable();;//ประเภทรถ กระบะ
+            $table->text('chassino')->nullable();;//เลขตัวถัง
+            $table->text('modelNo')->nullable();;//โมเดล
+            $table->text('engineNo')->nullable();;//หมายเลขเครื่อง
+            $table->text('carDescId')->nullable();;//สภาพรถ
+            $table->text('color_Id')->nullable();;//สีรถ
+            $table->text('useColorType_Id')->nullable();;//สีที่พ่นรถ
 
-          $table->integer('customer_id')->unsigned();
-          $table->integer('claim_id')->unsigned();
+          $table->integer('customer_id')->unsigned()->nullable();;
+          $table->integer('claim_id')->unsigned()->nullable();;
 
           $table->foreign('customer_id')
                   ->references('id')

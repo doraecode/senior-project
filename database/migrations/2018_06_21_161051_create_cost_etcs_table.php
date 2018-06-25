@@ -16,13 +16,13 @@ class CreateCostEtcsTable extends Migration
         Schema::create('cost_etcs', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->text('number');//เลขรายการ
-            $table->text('name');//ชื่อรายการ
-            $table->text('ref_claim_id');//เลขเคลมไอดี
-            $table->text('price');//ราคา
-              $table->integer('customer_id')->unsigned();
-          $table->integer('claim_id')->unsigned();
-            $table->integer('car_id')->unsigned();
+            $table->text('number')->nullable();;//เลขรายการ
+            $table->text('name')->nullable();;//ชื่อรายการ
+            $table->text('ref_claim_id')->nullable();;//เลขเคลมไอดี
+            $table->text('price')->nullable();;//ราคา
+              $table->integer('customer_id')->unsigned()->nullable();;
+          $table->integer('claim_id')->unsigned()->nullable();;
+            $table->integer('car_id')->unsigned()->nullable();;
           
           $table->foreign('customer_id')
                   ->references('id')

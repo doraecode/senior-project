@@ -16,22 +16,22 @@ class CreateOffersTable extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->text('customerGetCarDate');//วันที่ลูกค้ามารับรถ
-            $table->text('customerNameGetCar');//ชื่อผู้มารับรถ
-            $table->text('customerIDCardGetCar');//เลขบัตรประชาชนผู้มารับรถ
-            $table->text('customerTelGetcar');//เบอร์ผู้มารับรถ
-            $table->text('relation');//เกี่ยวข้องกับผู้เอาประกัน
-            $table->text('repNameOfferCar');//ชื่อเจ้าหน้าที่ส่งมอบรถ
-            $table->text('driver_Name');//ชื่อผู้ขับขี่
-            $table->text('driver_IdCard');//เลขบัตรชาชน
-            $table->text('driver_PassportsNO');//เลขใบขับขี่
-            $table->text('driver_Phone_NO');//เบอร์อผู้ขับขี่
-            $table->text('kmCarOffer');//หมายเลขกม
-            $table->text('commentOfferCar');//ความเรียบร้อยตอนรับรถ
-            $table->integer('customer_id')->unsigned();
-            $table->integer('claim_id')->unsigned();
-            $table->integer('car_id')->unsigned();
-            $table->integer('contact_id')->unsigned();
+            $table->text('customerGetCarDate')->nullable();;//วันที่ลูกค้ามารับรถ
+            $table->text('customerNameGetCar')->nullable();;//ชื่อผู้มารับรถ
+            $table->text('customerIdCardGetCar')->nullable();;//เลขบัตรประชาชนผู้มารับรถ
+            $table->text('customerTelGetCar')->nullable();;//เบอร์ผู้มารับรถ
+            $table->text('relation')->nullable();;//เกี่ยวข้องกับผู้เอาประกัน
+            $table->text('repNameOfferCar')->nullable();;//ชื่อเจ้าหน้าที่ส่งมอบรถ
+            $table->text('driver_Name')->nullable();;//ชื่อผู้ขับขี่
+            
+            $table->text('driver_PassportsNo')->nullable();;//เลขใบขับขี่
+            $table->text('driver_Phone_No')->nullable();;//เบอร์อผู้ขับขี่
+          
+            $table->text('commentOfferCar')->nullable();;//ความเรียบร้อยตอนรับรถ
+            $table->integer('customer_id')->unsigned()->nullable();;
+            $table->integer('claim_id')->unsigned()->nullable();;
+            $table->integer('car_id')->unsigned()->nullable();;
+            $table->integer('contact_id')->unsigned()->nullable();;
 
           
             $table->foreign('customer_id')

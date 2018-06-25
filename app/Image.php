@@ -8,4 +8,7 @@ class Image extends Model
 {
 	protected $table = 'images';
     //
+    public function claim(){
+		return $this->belongs_to('App\Claim');
+	}
 }

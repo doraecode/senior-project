@@ -15,26 +15,30 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps(); $table->text('contactDate');
-            $table->text('repContactName');//ชื่อเจ้าหน้าที่อู่
-            $table->text('appointmentsRepair');//วันที่ติดต่อซ่อมล่วงหน้า
-            $table->text('carRepairDate');//วันที่รถเข้าซ่อม  nullll
-            $table->text('repGetCarName');//ชื่อเจ้าหน้าที่
-            $table->text('EstimateDay');//วันที่คาดว่าจะซ่อมเสร็จ
-            $table->text('hopeFinish');//วันที่คาดว่าซ้่อมเสร็จ
-            $table->text('hopeFinish_Fix');//วันที่คาดว่าซ้่อมเสร็จ แก้ไข
-            $table->text('levelOil');//ระดับเชื้อเพลิง
-            $table->text('kmGetcar');//เลขกมตอนมารับรถ
-            $table->text('itemInCar');//อุปกรณ์ในรถ
-            $table->text('lossOther');//ความเสียหายอื่นๆ
-            $table->text('estimateLabor');//ประมานค่าแรงซ่อม
-            $table->text('typeRepair');//ประเภทงานซ่อม
-            $table->text('estimatePart');//รายการอะไหล่
-            $table->text('appointmentsGetCar');//วันที่นัดรับรถ
-            $table->text('completeCarDate');//วันที่ซ่อมรถเสร็จ
-          $table->integer('customer_id')->unsigned();
-          $table->integer('claim_id')->unsigned();
-            $table->integer('car_id')->unsigned();
+            $table->timestamps(); $table->text('contactDate')->nullable();;
+            $table->text('repContactName')->nullable();;//ชื่อเจ้าหน้าที่อู่
+           
+            $table->text('carRepairDate')->nullable();;//วันที่รถเข้าซ่อม  nullll
+            $table->text('repGetCarName')->nullable();;//ชื่อเจ้าหน้าที่
+            // $table->text('estimateDay');//วันที่คาดว่าจะซ่อมเสร็จ
+            $table->text('hopeFinish')->nullable();;//วันที่คาดว่าซ้่อมเสร็จ
+           
+            $table->text('levelOilGetCar')->nullable();;//ระดับเชื้อเพลิง
+            $table->text('levelOilOfferCar')->nullable();;//ระดับเชื้อเพลิง
+
+            $table->text('kmGetCar')->nullable();;//เลขกมตอนมารับรถ
+            $table->text('kmOfferCar')->nullable();;//เลขกมตอนมารับรถ
+
+            $table->text('itemInCar')->nullable();;//อุปกรณ์ในรถ
+            $table->text('lossOther')->nullable();;//ความเสียหายอื่นๆ
+            $table->text('estimateLabor')->nullable();;//ประมานค่าแรงซ่อม
+            $table->text('typeRepair')->nullable();;//ประเภทงานซ่อม
+            $table->text('estimatePart')->nullable();;//รายการอะไหล่
+            $table->text('appointmentsGetCar')->nullable();;//วันที่นัดรับรถ
+            $table->text('completeCarDate')->nullable();;//วันที่ซ่อมรถเสร็จ
+          $table->integer('customer_id')->unsigned()->nullable();;
+          $table->integer('claim_id')->unsigned()->nullable();;
+            $table->integer('car_id')->unsigned()->nullable();;
           
           $table->foreign('customer_id')
                   ->references('id')

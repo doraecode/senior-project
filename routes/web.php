@@ -14,16 +14,17 @@
 
 
 Route::get('/customers','CustomerController@index');//PASS
-Route::get('/customers/{customer}','CustomerController@show');//PASS
+Route::get('/customers/{customer}','CustomerController@edit');//PASS
 Route::get('/register/customer','CustomerController@create');// PASS
 Route::post('/customers/post','CustomerController@store');// PASS
+Route::get('/customers/{customer}/edit','CustomerController@edit');//
 
 Route::get('/customers/{customer}/edit','CustomerController@edit');
 Route::put('/customers/{customer}','CustomerController@update' );
 Route::delete('/customers/{customer}','CustomerController@destroy');
 
 // Route::get('/project','')
-Route::get('/claims','ClaimController@index');// PASS
+Route::get('/claims','ClaimController@claimIndex');// PASS
 Route::get('/claims/{claim}','ClaimController@show'); // 
 
 Route::get('/register/claims/{customer}','ClaimController@create');// PASS
@@ -33,7 +34,7 @@ Route::get('/register/claims/{customer}/cost-material','CostMaterialController@i
 Route::get('/register/claims/{customer}/image', 'ImageController@index'); //PASS
 Route::get('/image/{customer}/show', 'ImageController@show');
 
-Route::post('/claims/post','ClaimController@store');
+Route::post('/claims/{claim}/post','ClaimController@store');
 Route::get('/claims/{claim}/edit','ClaimController@edit');
 Route::put('/claims/{claim}','ClaimController@update' );
 Route::delete('/claims/{claim}','ClaimController@destroy');
@@ -44,7 +45,7 @@ Route::post('/claims/costMaterial/post','CostMaterialController@store');
 
 
 
-Route::get('/', 'ClaimController@index'); //PASS
+Route::get('/', 'ClaimController@claimIndex'); //PASS
 // Route::get('/kuy/{kuy}', 'CostWorkController@index'); //PASS
 	
 

@@ -7,7 +7,7 @@
 <table>
 <tr>
 	<div align="Center">
-    <a href="/register/claims" class="btn btn-primary" role="button">สร้างข้อมูลลูกค้า </a>
+    <a href="register/customer" class="btn btn-primary" role="button">สร้างข้อมูลลูกค้า </a>
     <a href="#" class="btn btn-primary" role="button">Update สถานะรถลูกค้า</a>
 </div>
 </tr>
@@ -36,20 +36,35 @@
     </tr></thead>
 
     <tbody>
-    <?php foreach ($claims as $claim ): ?>
+        @foreach( $claims as $claim)
         <tr>
-      <td>{{$claim->created_at}}</td>
-        <td>{{$claim->id}}</td>
-        <td><a href="/index/{{$createclaim->id}}">{{$claim->claim_id}}</a></td>
-        <td>{{$claim->accident_id}}</td>
-        <td>{{$claim->car_id}}</td>
-        <td>{{$claim->car_brand}}</td>
-        <td>{{$claim->car_gen}}</td>
-        <td>{{$claim->company}}</td>
-        <td>{{$claim->state}}</td>
-        <td>{{$claim->customer_name}}</td>
 
-    <?php endforeach; ?>
+            <td><a href="">{{$claim->created_at}}</a></td>
+            <td>{{$claim->id}}</td>
+            <td>{{$claim->id}}</td>
+            <td>{{$claim->accClaimNo}}</td>
+            <td>{{$claim->accPolicyNo}}</td>
+            @foreach($cars as $car)
+            @if($car['claim_id'] == $claim['id'])
+                <td>{{$car->carRegNo}}</td>
+                <td>{{$car->car_CMFG}}</td>
+                <td>{{$car->carModel}}</td>
+            @endif
+
+            @endforeach
+            <td>{{$claim->insureName}}</td>
+            <td>{{$claim->statusClaim}}</td>
+            @foreach($customers as $customer)
+            @if($customer['id'] == $claim['customer_id'])
+                <td>{{$customer->firstName}} {{$customer->lastName}}</td>
+               
+            @endif
+            @endforeach
+          
+
+        </tr>
+        @endforeach
+        
         </tr>
     </tbody>
 

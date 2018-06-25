@@ -20,16 +20,15 @@
  	 <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
 
  </div> -->
- <div class="container-fluid">
+ <div class="container-fluid ">
  <div class="row content">
- 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " style="height: 30px">
+ 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " style="height: 70px">
 
 @yield('headder')
 	</div>
 </div>
-<div class="row content">
- <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 sidenav">
-
+<div class="row content " >
+ <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 sidenav " style="background-color: whitesmoke">
 	@include('layout.sub-layout.sidebar_claim')
 
      
@@ -37,7 +36,13 @@
  </div>
 
  
- <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+ <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 " style="background-color: whitesmoke">
+ 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " style="height: 60px">
+	@include('layout.sub-layout.menubar')
+
+	</div>
+	
+
 @yield('content')
  
  </body>

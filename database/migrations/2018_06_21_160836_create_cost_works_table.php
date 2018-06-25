@@ -16,17 +16,17 @@ class CreateCostWorksTable extends Migration
         Schema::create('cost_works', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->text('number');//เลขรายการ
-            $table->text('name');//ชื่อรายการ
-            $table->text('ref_claim_id');//เลขเคลมไอดี
-            $table->text('damageLevel');//ความเสียหาย
-            $table->text('price');//ราคา
-            $table->text('priceOffer');//ราคาเสนอ
-            $table->text('priceOk');//ราคาอนุมัติ
+            $table->text('number')->nullable();;//เลขรายการ
+            $table->text('name')->nullable();;//ชื่อรายการ
+            $table->text('ref_claim_id')->nullable();;//เลขเคลมไอดี
+            $table->text('damageLevel')->nullable();;//ความเสียหาย
+            $table->text('price')->nullable();;//ราคา
+            $table->text('priceOffer')->nullable();;//ราคาเสนอ
+            $table->text('priceOk')->nullable();;//ราคาอนุมัติ
 
-             $table->integer('customer_id')->unsigned();
-          $table->integer('claim_id')->unsigned();
-            $table->integer('car_id')->unsigned();
+             $table->integer('customer_id')->unsigned()->nullable();;
+          $table->integer('claim_id')->unsigned()->nullable();;
+            $table->integer('car_id')->unsigned()->nullable();;
           
           $table->foreign('customer_id')
                   ->references('id')

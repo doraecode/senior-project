@@ -3,7 +3,7 @@
  <link href="/css/create_customer.css" rel="stylesheet">
 @endsection
 @section('headder')
-<h4 align="center">kuy555</h4>
+
 
 @endsection
 @section('sidebar')

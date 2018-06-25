@@ -13,22 +13,22 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 @yield('stylesheet')
 
- {{-- <link href="/css/app.css" rel="stylesheet"> --}}
+ <!-- <link href="/css/app.css" rel="stylesheet"> -->
  
  </head>
  <body>
  	 <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
 
  </div> -->
- <div class="container-fluid">
+ <div class="container-fluid ">
  <div class="row content">
- 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " style="height: 25px">
+ 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " style="height: 70px">
 
 @yield('headder')
 	</div>
 </div>
-<div class="row content">
- <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 sidenav "style="background-color: whitesmoke" >
+<div class="row content " >
+ <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 sidenav " style="background-color: whitesmoke">
 	@include('layout.sub-layout.sidebar')
 
      
@@ -36,11 +36,13 @@
  </div>
 
  
- <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9" style="background-color: whitesmoke">
- 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " style="height: 50px" >
+ <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 " style="background-color: whitesmoke">
+ 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " style="height: 60px">
 	@include('layout.sub-layout.menubar')
 
 	</div>
+	
+
 @yield('content')
  
  </body>

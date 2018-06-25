@@ -1,9 +1,12 @@
-@extends('layout.main') @section('page_title', 'Customers')
+@extends('layout.mainClaim') @section('page_title', 'Customers')
 @section('stylesheet')
  <link href="/css/create_customer.css" rel="stylesheet">
 @endsection
+@section('sidebar')
+@include('layout.sub-layout.sidebar_claim')
+@endsection
 @section('headder')
-<h4 align="center">kuy555</h4>
+
 
 @endsection
 @section('sidebar')
@@ -11,8 +14,8 @@
 @endsection
 @section('content')
 
-      <nav class="nav nav-pills nav-fill">
-  <a class="nav-item nav-link active" href="#">ข้อมูลทั่วไป</a>
+      <nav class="nav nav-pills nav-fill ">
+  <a class="nav-item nav-link active" href="http://localhost:8000/register/claims/{{$customer->id}}">ข้อมูลทั่วไป</a>
   <a class="nav-item nav-link" href="http://localhost:8000/register/claims/{{$customer->id}}/cost-work">ค่าแรง</a>
   <a class="nav-item nav-link" href="http://localhost:8000/register/claims/{{$customer->id}}/cost-material">ค่าอะไหล่</a>
   <a class="nav-item nav-link" href="#">ค่าใช้จ่ายอื่นๆ</a>
@@ -21,7 +24,7 @@
   <a class="nav-item nav-link disabled" href="#">Disabled</a>
 </nav>
 <br><br>
-<form  method="POST" action="/claims/post">
+<form  method="POST" action="/claims/{claim}/post">
       {{ csrf_field() }}
       
       

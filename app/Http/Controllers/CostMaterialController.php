@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CostMaterial;
 use App\Customer;
+use App\CostEtc;
+use App\Claim;
+
+
 
 
 class CostMaterialController extends Controller
